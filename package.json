@@ -1,0 +1,82 @@
+{
+  "name": "convert-staticzap",
+  "version": "1.0.6",
+  "description": "Convert git/open-source files url to fast statically CDN url",
+  "author": "Wisesa <hi@wisesa.dev> (https://wisesa.dev)",
+  "license": "MIT",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/svspicious/create-staticzap.git"
+  },
+  "exports": {
+    "require": "./dist/index.cjs",
+    "default": "./dist/index.modern.js"
+  },
+  "type": "module",
+  "source": "./src/index.ts",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.modern.module.js",
+  "unpkg": "./dist/index.umd.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist/**.cjs*",
+    "dist/**.js*",
+    "dist/**/*.ts"
+  ],
+  "scripts": {
+    "build": "microbundle",
+    "watch": "microbundle watch",
+    "test": "jest --coverage",
+    "test:watch": "jest --coverage --watch",
+    "prepare": "yarn build"
+  },
+  "devDependencies": {
+    "@types/jest": "^27.0.3",
+    "@types/node": "^16.11.11",
+    "@typescript-eslint/eslint-plugin": "^5.5.0",
+    "@typescript-eslint/parser": "^5.5.0",
+    "eslint": "^8.4.0",
+    "jest": "^27.4.3",
+    "jest-config": "^27.4.3",
+    "microbundle": "^0.14.2",
+    "np": "^7.6.0",
+    "prettier": "^2.5.1",
+    "ts-jest": "^27.0.7",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.2"
+  },
+  "jest": {
+    "transform": {
+      ".(ts|tsx)": "ts-jest"
+    },
+    "testEnvironment": "node",
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "/test/"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 90,
+        "functions": 95,
+        "lines": 95,
+        "statements": 95
+      }
+    },
+    "collectCoverageFrom": [
+      "src/*.{js,ts}"
+    ]
+  },
+  "prettier": {
+    "semi": true,
+    "singleQuote": false
+  }
+}
