@@ -10,13 +10,15 @@ Install
 
 ```sh
 yarn add convert-staticzap
+```
 
-#or
+or
 
+```sh
 npm install convert-staticzap
 ```
 
-Import
+then import
 
 ```js
 import convert from "convert-staticzap";
@@ -46,7 +48,6 @@ I was using https://github.com/mazipan/graphql-pokeapi to build [my app](https:/
 ![lighthouse hate that](web-dev-result.png)
 
 ## Important links
-
 
 - [Statically Terms of Service](https://statically.io/policies/terms/)
 - [Statically Staticzap](https://statically.io/docs/using-staticzap/)
