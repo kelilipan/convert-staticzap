@@ -1,6 +1,6 @@
 {
   "name": "convert-staticzap",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Convert git/open-source files url to fast statically CDN url",
   "author": "Wisesa <hi@wisesa.dev> (https://wisesa.dev)",
   "license": "MIT",
