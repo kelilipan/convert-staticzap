@@ -7,7 +7,7 @@
  * @return {(string|null)} Statically.io CDN url or null if url is not valid
  */
 function convert(url?: string) {
-  const STATICALLY_PASTE_DATA: Record<string, string> = {
+  const DICTIONARY: Record<string, string> = {
     "https?:\\/\\/raw\\.github(?:usercontent)?\\.com\\/([^\\/]+)\\/([^\\/]+)\\/([^\\/]+)\\/([^?&#]+)":
       "https://cdn.statically.io/gh/$1/$2/$3/$4",
     "https?:\\/\\/gist\\.githubusercontent\\.com\\/(\\S+)":
@@ -20,14 +20,14 @@ function convert(url?: string) {
       "https://cdn.statically.io/bb/$1/$2",
   };
 
-  const tasks = STATICALLY_PASTE_DATA;
   if (!url) {
     return null;
   }
-  for (let t in tasks) {
-    const regex = new RegExp("^" + t + "$");
+
+  for (let key in DICTIONARY) {
+    const regex = new RegExp("^" + key + "$");
     const match = url.match(regex);
-    const output = tasks[t];
+    const output = DICTIONARY[key];
     if (match) {
       return url.replace(regex, output);
     }
